@@ -1,9 +1,9 @@
-import Base from 'magnet-core/base'
+import { Module } from 'magnet-core/module'
 import defaultConfig from './config/moduleName'
 
-export default class ModuleName extends Base {
+export default class ModuleName extends Module {
   async setup () {
-    let config = Object.assign(defaultConfig, this.config.moduleName, this.options)
+    let config = this.prepareConfig(<moduleName>, defaultConfig)
   }
 
   async teardown () {
